@@ -1,0 +1,13 @@
+property_id,city,area,property_type,size_marla,bedrooms,bathrooms,price_pkr,purpose
+PP001,Lahore,Bahria Town,House,5,4,4,18500000,Buy
+PP002,Lahore,DHA Phase 6,House,5,4,5,19800000,Buy
+PP003,Lahore,Johar Town,House,5,3,3,17500000,Buy
+PP004,Lahore,Bahria Town,House,8,5,5,28500000,Buy
+PP005,Lahore,DHA Phase 5,House,10,5,6,39000000,Buy
+PP006,Islamabad,Bahria Town,House,5,4,4,20500000,Buy
+PP007,Islamabad,DHA Phase 2,House,5,3,3,19000000,Buy
+PP008,Karachi,DHA Phase 6,Apartment,3,3,3,16500000,Buy
+PP009,Lahore,Gulberg,Apartment,2,2,2,12000000,Rent
+PP010,Lahore,Model Town,House,5,4,4,22000000,Rent
+PP011,Islamabad,F-11,House,10,5,5,52000000,Buy
+PP012,Karachi,Gulshan,House,5,4,3,14500000,Buy
