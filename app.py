@@ -11,18 +11,14 @@ except ImportError:
 
 st.set_page_config(page_title="PropertyPilot AI", page_icon="🏠", layout="wide")
 
-MODEL = "llama-3.3-70b-versatile"
+# Groq currently supports GPT-OSS 120B with JSON mode and agentic/tool-use capabilities.
+MODEL = "openai/gpt-oss-120b"
 
 @st.cache_data
 def load_properties():
     return pd.read_csv("data/properties.csv")
 
 properties = load_properties()
-
-
-def money_to_pkr(text):
-    value = float(text.replace(",", ""))
-    return int(value)
 
 
 def parse_requirement_demo(text):
@@ -87,11 +83,13 @@ city, area, property_type, size_marla, max_budget_pkr, min_bedrooms, purpose.
 Use null for unknown values. property_type must be House, Apartment, Plot, or null.
 purpose must be Buy or Rent.
 Convert crore to PKR (1 crore = 10,000,000) and million to PKR (1 million = 1,000,000).
+Never invent missing values.
 User message: {text}'''
     try:
         response = client.chat.completions.create(
             model=MODEL,
             temperature=0,
+            reasoning_effort="medium",
             response_format={"type": "json_object"},
             messages=[
                 {"role": "system", "content": "You extract structured real-estate requirements. Never invent missing values."},
@@ -230,7 +228,7 @@ if st.button("🚀 Find Properties", type="primary", use_container_width=True):
     for col, label, value in zip(cols, labels, values):
         col.metric(label, value)
 
-    st.caption("Requirement extraction: Groq AI" if ai_used else "Requirement extraction: demo fallback parser")
+    st.caption("Requirement extraction: Groq GPT-OSS 120B" if ai_used else "Requirement extraction: demo fallback parser")
 
     st.subheader("🤖 Agent Activity")
     activity = st.columns(5)
