@@ -60,6 +60,8 @@ Match weights are prototype design assumptions, not professional valuation stand
 
 Never commit API keys, passwords or other secrets to GitHub. Use environment variables locally and platform secrets for deployment.
 
-## Hackathon positioning
 
 PropertyPilot AI is positioned as a workflow layer for real-estate professionals rather than another property marketplace. The hypothesis is that AI can reduce repetitive work involved in structuring client requirements, matching available inventory, explaining matches and preparing follow-up communication.
+
+## Link to the website
+https://propertypilot-pkmpp4hm3kwguhzryapts8.streamlit.app/
